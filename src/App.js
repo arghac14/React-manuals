@@ -1,27 +1,17 @@
 import React, {Component} from 'react';
 import './App.css';
+import Test from './components/Test';
 
-class Test extends Component {
+class App extends Component {
     render(){
       return (
-        <div className="container">
-          <div className="row">
-            <div className="col-md-6">
-              <div className="test">
-                Hello World!
-              </div>
-            </div>
-            <div className="col-md-6">
-              <div className="test">
-                Hello World!
-              </div>
-            </div>
-          </div>
+        <div>
+          <Test/>
+          <Test/>
         </div>
-
-    );
+      );
   }
 }
 
 
-export default Test;
+export default App;
