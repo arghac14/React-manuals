@@ -7,7 +7,6 @@ class App extends Component {
       return (
         <div>
           <Test name = "Arghadip"/>
-          <Test name = "arghac14"/>
         </div>
       );
   }
