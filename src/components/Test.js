@@ -49,17 +49,36 @@ class Test extends Component {
           if(this.state.show){
               myheader = <Test2/>
           }
+
+          const mystyle = {
+            color: "yellow",
+            backgroundColor: "DodgerBlue",
+            padding: "10px",
+            fontFamily: "Arial"
+          };
+
       return (
-          
           <div className="test">
               {myheader}
-              <h1>Hello World!</h1>
+              <h1 style={{backgroundColor: "blue"}}>Hello World!</h1>
               <h1>I am {this.state.name}</h1>
-              <h1>My age is {this.state.Age} </h1>
+              <h1 style={{mystyle}}> My age is {this.state.Age} </h1>
               <button type="button" onClick = {()=>this.changeContent(25)}>Click Here</button>
               <button type="button" onClick = {this.delHeader}>Delete</button>
               <div id="div1"></div>
-            <div id="div2"></div>
+              <div id="div2"></div>
+              <div id="div3">
+                  <div class="container">
+                      <div class="row">
+                          <div class="col-md-6">
+                                <h3>Boostrap working!</h3>
+                          </div>
+                          <div class="col-md-6">
+                                <h3>Boostrap working!</h3>
+                          </div>
+                      </div>
+                  </div>
+              </div>
           </div>
       );
   }
@@ -76,6 +95,5 @@ class Test2 extends React.Component{
         );
     }   
 }
-
 
 export default Test;
