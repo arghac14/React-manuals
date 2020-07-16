@@ -21,6 +21,19 @@ class Test extends Component {
         }, 1000)
     }
 
+    shouldComponentUpdate(){
+        return true;
+    }
+
+    getSnapshotBeforeUpdate(prevProps, prevState) {
+        document.getElementById("div1").innerHTML =
+        "Before the update, the age was " + prevState.Age;
+    }
+      componentDidUpdate() {
+        document.getElementById("div2").innerHTML =
+        "The updated age is " + this.state.Age;
+    }
+
     changeContent = (age) => {
         this.setState({Age: age});
     }
@@ -33,6 +46,8 @@ class Test extends Component {
               <h1>I am {this.state.name}</h1>
               <h1>My age is {this.state.Age} </h1>
               <button type="button" onClick = {()=>this.changeContent(25)}>Click Here</button>
+              <div id="div1"></div>
+        <div id="div2"></div>
           </div>
       );
   }
