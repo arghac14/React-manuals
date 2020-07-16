@@ -7,7 +7,8 @@ class Test extends Component {
 
     this.state = {
         name : 'arghac14',
-        Age : 22
+        Age : 22,
+        show: true
      }
     }
 
@@ -38,19 +39,42 @@ class Test extends Component {
         this.setState({Age: age});
     }
 
+    delHeader = () => {
+        this.setState({show: false});
+    }
+
     render(){
       const info = {role: 'Web Developer', Age: 21};
+      let myheader;
+          if(this.state.show){
+              myheader = <Test2/>
+          }
       return (
+          
           <div className="test">
+              {myheader}
               <h1>Hello World!</h1>
               <h1>I am {this.state.name}</h1>
               <h1>My age is {this.state.Age} </h1>
               <button type="button" onClick = {()=>this.changeContent(25)}>Click Here</button>
+              <button type="button" onClick = {this.delHeader}>Delete</button>
               <div id="div1"></div>
-        <div id="div2"></div>
+            <div id="div2"></div>
           </div>
       );
   }
+}
+
+class Test2 extends React.Component{
+    componentWillUnmount(){
+        alert("Component is about to be unmounted!");
+        console.log("Component is about to be unmounted!");
+    }
+    render(){
+        return (
+        <h1>LOL!</h1>
+        );
+    }   
 }
 
 
