@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
-
+import Experience from '../components/Experience';
+import {Switch, Route, Redirect} from 'react-router-dom';
+import App from '../App';
 class Test extends Component {
     constructor(props){
         super(props);
@@ -56,6 +58,9 @@ class Test extends Component {
             padding: "10px",
             fontFamily: "Arial"
           };
+          const AppPage = ()=>{
+              return <App/>;
+          }
 
       return (
           <div className="test">
@@ -68,13 +73,15 @@ class Test extends Component {
               <div id="div1"></div>
               <div id="div2"></div>
               <div id="div3">
-                  <div class="container">
-                      <div class="row">
-                          <div class="col-md-6">
+                  <div className="container">
+                      
+                      <div className="row">
+                          <div className="col-md-6 col-sm-6 col-lg-6 col-xs-6">
                                 <h3>Boostrap working!</h3>
                           </div>
-                          <div class="col-md-6">
+                          <div className="col-md-6 col-sm-6 col-lg-6 col-xs-6">
                                 <h3>Boostrap working!</h3>
+                                
                           </div>
                       </div>
                   </div>
@@ -86,7 +93,6 @@ class Test extends Component {
 
 class Test2 extends React.Component{
     componentWillUnmount(){
-        alert("Component is about to be unmounted!");
         console.log("Component is about to be unmounted!");
     }
     render(){
