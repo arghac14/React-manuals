@@ -31,7 +31,7 @@ class Navbar extends Component {
                             <ul className="nav navbar-nav navbar-right" style={{fontSize: "17px", display: "inline-block"}}>
                             <li><NavLink to={'/test'}><a href="#home" id="u"><i className="fa fa-home "></i> Home</a></NavLink></li>
                             <li><Link to={'/exp'}><a href="#experience"  id="u"><i className="fa fa-briefcase"></i> Experience</a></Link></li>
-                            <li><a href="#skills"  id="u"><i className="fa fa-code"></i> Skills</a></li>
+                            <li><Link to={`/test/${"lol"}`}><a href="#skills"  id="u"><i className="fa fa-code"></i> Skills</a></Link></li>
                             </ul>
                         
                         </div>

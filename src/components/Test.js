@@ -6,7 +6,7 @@ class Test extends Component {
     constructor(props){
         super(props);
     //const n = props.name;
-
+    
     this.state = {
         name : 'arghac14',
         Age : 22,
@@ -15,7 +15,7 @@ class Test extends Component {
     }
 
     static getDerivedStateFromProps(props, state) {
-        return {name: props.name};
+        return {name: props.name, Age: props.age};
     }
 
     componentDidMount() {

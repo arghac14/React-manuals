@@ -14,7 +14,8 @@ class App extends Component {
         <>
               <Navbar/>
               <Switch>
-                  <Route exact path='/test' component = {Test}/>
+                  <Route exact path='/test' component = {()=><Test name="Arghadip Chakraborty"/>}/>
+                  <Route path='/test/:username/:age' component = {({match})=><Test name={match.params.username} age={match.params.age}/>}/>
                   <Route exact path ='/exp' component = {Experience}/>
                   <Redirect to='/'/>
               </Switch>
