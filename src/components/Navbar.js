@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import '../App.css';
 import Experience from '../components/Experience';
+import Form from '../components/Form';
 import {Switch, Route, Redirect, Link, Router, NavLink} from 'react-router-dom';
 
 
@@ -32,6 +33,8 @@ class Navbar extends Component {
                             <li><NavLink to={'/test'}><a href="#home" id="u"><i className="fa fa-home "></i> Home</a></NavLink></li>
                             <li><Link to={'/exp'}><a href="#experience"  id="u"><i className="fa fa-briefcase"></i> Experience</a></Link></li>
                             <li><Link to={`/test/${"lol"}`}><a href="#skills"  id="u"><i className="fa fa-code"></i> Skills</a></Link></li>
+                            <li><Link to={`/form`}><a href="#form"  id="u"><i className="fa fa-form"></i> Form</a></Link></li>
+                          
                             </ul>
                         
                         </div>
