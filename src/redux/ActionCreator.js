@@ -13,3 +13,20 @@ export const changeAge = (a) => ({
         Age: a
     }
 });
+
+export const fetchName = () =>(dispatch)=>{
+    dispatch(nameLoading(True));
+
+    setTimeout(()=>{
+        dispatch(changeName("sas"));
+    }, 2000)
+}
+
+export const nameLoading = () => ({
+    type: Action.nameLoading
+})
+
+export const changeName = (n) =>({
+    type: Action.changeName,
+    payload: n
+})
