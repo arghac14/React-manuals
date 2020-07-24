@@ -1,17 +1,31 @@
 import React, {Component} from 'react';
 import Experience from '../components/Experience';
-import {Switch, Route, Redirect} from 'react-router-dom';
+import {Switch, Route, Redirect, withRouter} from 'react-router-dom';
 import App from '../App';
+import {connect} from 'react-redux';
+import {changeName, changeAge} from '../redux/ActionCreator'; 
+
+const mapStateToProps = state =>{
+    return {
+        name: state.name,
+        Age: state.Age,
+        show: state.show
+    }
+}
+
+const mapDispatchToProps = (dispatch) => ({
+    changeName: (n) => dispatch(changeName(n))
+});
+
 class Test extends Component {
     constructor(props){
         super(props);
     //const n = props.name;
-    
-    this.state = {
-        name : 'arghac14',
-        Age : 22,
-        show: true
-     }
+    // this.state = {
+    //     name : 'arghac14',
+    //     Age : 22,
+    //     show: true
+    //  }
     }
 
     static getDerivedStateFromProps(props, state) {
@@ -34,21 +48,22 @@ class Test extends Component {
     }
       componentDidUpdate() {
         document.getElementById("div2").innerHTML =
-        "The updated age is " + this.state.Age;
+        "The updated age is " + this.props.Age;
     }
 
-    changeContent = (age) => {
-        this.setState({Age: age});
-    }
+    // changeContent = (age) => {
+    //     this.setState({Age: age});
+    // }
 
     delHeader = () => {
         this.setState({show: false});
     }
 
+    
     render(){
       const info = {role: 'Web Developer', Age: 21};
       let myheader;
-          if(this.state.show){
+          if(this.props.show){
               myheader = <Test2/>
           }
 
@@ -66,9 +81,9 @@ class Test extends Component {
           <div className="test">
               {myheader}
               <h1 style={{backgroundColor: "blue"}}>Hello World!</h1>
-              <h1>I am {this.state.name}</h1>
-              <h1 style={{mystyle}}> My age is {this.state.Age} </h1>
-              <button type="button" onClick = {()=>this.changeContent(25)}>Click Here</button>
+              <h1>I am {this.props.name }</h1>
+              <h1 style={{mystyle}}> My age is {this.props.Age} </h1>
+              <button type="button" onClick = {()=>this.props.changeName("Arghac14")}>Click Here</button>
               <button type="button" onClick = {this.delHeader}>Delete</button>
               <div id="div1"></div>
               <div id="div2"></div>
@@ -102,4 +117,4 @@ class Test2 extends React.Component{
     }   
 }
 
-export default Test;
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Test));

@@ -7,9 +7,15 @@ import Footer from './components/Footer';
 import Experience from './components/Experience';
 import Form from './components/Form';
 
+import {Provider} from 'react-redux';
+import {ConfigureStore} from './redux/ConfigureStore';
+const store = ConfigureStore();
+
+
 class App extends Component {
     render(){
       return (
+        <Provider store = {store}>
         <BrowserRouter>
         <>
               <Navbar/>
@@ -23,6 +29,7 @@ class App extends Component {
               <Footer/>
         </>
         </BrowserRouter>
+        </Provider>
       );
   }
 }
