@@ -1,3 +1,29 @@
+# React-manuals
+React concepts: Basic Structure, react-redux, reactt context API, react hooks. 
+
+Note: Checkout the commits in bottom-to-top manner.
+```
+git checkout --oneline
+git checkout <commit-id>
+```
+```
+36d7735 (HEAD) Context API and Hooks
+0db4a5d Redux [Revisited with better methods and also redux thunk and middleware included]
+6f1079e Redux
+66e94bd Form: Controlled
+93245a0 React Router: parameters
+4ec4535 React Router
+62d1033 React CSS, Bootstrap
+79c77ba Lifecycle: Unmounting
+a068e9d Lifecycle: Updating
+7c4652e Lifecycle: Mounting
+67d8770 state
+61b9fbf props
+da777bb components
+914d65f Components
+8ebccc9 create-react-app
+```
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
